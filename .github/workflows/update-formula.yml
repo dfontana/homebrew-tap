@@ -1,12 +1,15 @@
 name: update-formula
 
 on:
-  # Primary path: starjj's release workflow fires this when a release is published.
+  # Primary path: release workflows fire this when a release is published.
   repository_dispatch:
-    types: [starjj-release]
-  # Manual / instant: run from the Actions tab, optionally pinning a specific tag.
+    types: [starjj-release, arrus-release, tpl-release]
+  # Manual: run from the Actions tab, targeting a specific formula and optional tag.
   workflow_dispatch:
     inputs:
+      formula:
+        description: "Formula to update (starjj, arrus, tpl; blank = all)"
+        required: false
       tag:
         description: "Release tag to pin (default: latest)"
         required: false
@@ -23,22 +26,37 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Regenerate formula
+      - name: Regenerate formula(s)
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          scripts/gen-formula.sh "${{ github.event.inputs.tag || github.event.client_payload.tag }}"
+          tag="${{ github.event.inputs.tag || github.event.client_payload.tag }}"
+
+          if [ "${{ github.event_name }}" = "repository_dispatch" ]; then
+            formula="${{ github.event.action }}"
+            formula="${formula%-release}"
+            "scripts/gen-${formula}-formula.sh" "$tag"
+          elif [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ -n "${{ github.event.inputs.formula }}" ]; then
+            "scripts/gen-${{ github.event.inputs.formula }}-formula.sh" "$tag"
+          else
+            scripts/gen-starjj-formula.sh ""
+            scripts/gen-arrus-formula.sh ""
+            scripts/gen-tpl-formula.sh ""
+          fi
 
       - name: Commit if changed
         run: |
           set -euo pipefail
-          if git diff --quiet -- Formula/starjj.rb; then
-            echo "Formula already up to date."
+          if git diff --quiet -- Formula/; then
+            echo "All formulas already up to date."
             exit 0
           fi
-          version="$(grep -m1 'version "' Formula/starjj.rb | sed -E 's/.*"(.*)".*/\1/')"
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add Formula/starjj.rb
-          git commit -m "starjj ${version}"
+          git add Formula/
+          msg="$(git diff --cached --name-only -- Formula/ | sed 's|Formula/||;s|\.rb||' | while read -r name; do
+            ver="$(grep -m1 'version "' "Formula/${name}.rb" | sed -E 's/.*"(.*)".*/\1/')"
+            echo "${name} ${ver}"
+          done | paste -sd', ')"
+          git commit -m "$msg"
           git push
