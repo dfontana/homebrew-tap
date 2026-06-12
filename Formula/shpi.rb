@@ -2,23 +2,23 @@
 class Shpi < Formula
   desc "Shpi"
   homepage "https://github.com/dfontana/shpi"
-  version "0.0.0"
+  version "0.1.1"
 
   on_macos do
     on_arm do
-      url "https://github.com/dfontana/shpi/releases/download/v0.0.0/shpi-aarch64-apple-darwin.tar.gz"
-      sha256 "0000000000000000000000000000000000000000000000000000000000000000"
+      url "https://github.com/dfontana/shpi/releases/download/v0.1.1/shpi-aarch64-apple-darwin.tar.gz"
+      sha256 "8e8bae5692f1a9a9fa79acff0d6e58038c555abfa739941f1854e9d5292246b3"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/dfontana/shpi/releases/download/v0.0.0/shpi-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "0000000000000000000000000000000000000000000000000000000000000000"
+      url "https://github.com/dfontana/shpi/releases/download/v0.1.1/shpi-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "c61355377929ee497c05110de14f6be6d0419ea7b72e4b9828a2176239e04d45"
     end
     on_intel do
-      url "https://github.com/dfontana/shpi/releases/download/v0.0.0/shpi-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "0000000000000000000000000000000000000000000000000000000000000000"
+      url "https://github.com/dfontana/shpi/releases/download/v0.1.1/shpi-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "a7f471825fa91b5ffcbb9e376581de5f017d290e7d7dbec8bf6774b4e71cca80"
     end
   end
 
