@@ -3,7 +3,7 @@
 # Regenerate Formula/starjj.rb pinned to a starjj release.
 #
 # Usage: scripts/gen-formula.sh [tag]
-#   tag  release tag to pin (e.g. v0.1.1). Defaults to the latest release.
+#   tag  release tag to pin (e.g. v0.1.2). Defaults to the latest release.
 #
 # Requires: gh (authenticated), sha256sum. Exits 0 (no-op) if no release exists.
 set -euo pipefail
@@ -33,8 +33,8 @@ sha() {
 }
 
 sha_macos_arm="$(sha aarch64-apple-darwin)"
-sha_linux_arm="$(sha aarch64-unknown-linux-gnu)"
-sha_linux_x86="$(sha x86_64-unknown-linux-gnu)"
+sha_linux_arm="$(sha aarch64-unknown-linux-musl)"
+sha_linux_x86="$(sha x86_64-unknown-linux-musl)"
 
 echo "Pinning starjj $version ($tag)"
 
@@ -54,11 +54,11 @@ class Starjj < Formula
 
   on_linux do
     on_arm do
-      url "$base/starjj-aarch64-unknown-linux-gnu.tar.gz"
+      url "$base/starjj-aarch64-unknown-linux-musl.tar.gz"
       sha256 "$sha_linux_arm"
     end
     on_intel do
-      url "$base/starjj-x86_64-unknown-linux-gnu.tar.gz"
+      url "$base/starjj-x86_64-unknown-linux-musl.tar.gz"
       sha256 "$sha_linux_x86"
     end
   end
