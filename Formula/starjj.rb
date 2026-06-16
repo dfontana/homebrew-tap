@@ -2,23 +2,23 @@
 class Starjj < Formula
   desc "Fast jujutsu prompt segment for Starship"
   homepage "https://github.com/dfontana/starjj"
-  version "0.1.1"
+  version "0.1.2"
 
   on_macos do
     on_arm do
-      url "https://github.com/dfontana/starjj/releases/download/v0.1.1/starjj-aarch64-apple-darwin.tar.gz"
-      sha256 "8e10e83ad5efe0de5e9bf26e26f58211d9251850a3459bcf6521b49f34bd66e4"
+      url "https://github.com/dfontana/starjj/releases/download/v0.1.2/starjj-aarch64-apple-darwin.tar.gz"
+      sha256 "b2c471409483f64841a095fd8b2206514b50f3e29a42352ee6ca8c9f807087d2"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/dfontana/starjj/releases/download/v0.1.1/starjj-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "4731baa29ecbb77d705f901df3afd8c148d693bc3f3c5558bbfa2fee9cd2d6cd"
+      url "https://github.com/dfontana/starjj/releases/download/v0.1.2/starjj-aarch64-unknown-linux-musl.tar.gz"
+      sha256 "16fa34711f4421403c5fb0cd0c562e6f244b87137bbf3d1879dec70dc2fe7dcf"
     end
     on_intel do
-      url "https://github.com/dfontana/starjj/releases/download/v0.1.1/starjj-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "c99f74c94e6ea4497bf237b93bb8cec5904ed8da39a678c77963705f272b7fee"
+      url "https://github.com/dfontana/starjj/releases/download/v0.1.2/starjj-x86_64-unknown-linux-musl.tar.gz"
+      sha256 "8a013088dd7cfb2929af4c00765b4cffab1ad81ed63b9f5fb98baf5ffc5404c6"
     end
   end
 
