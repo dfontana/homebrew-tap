@@ -2,23 +2,23 @@
 class Gph < Formula
   desc "Lisp DSL compiler to Mermaid, SVG, and Kitty terminal"
   homepage "https://github.com/dfontana/gph"
-  version "0.0.0"
+  version "0.1.0"
 
   on_macos do
     on_arm do
-      url "https://github.com/dfontana/gph/releases/download/v0.0.0/gph-aarch64-apple-darwin.tar.gz"
-      sha256 "0000000000000000000000000000000000000000000000000000000000000000"
+      url "https://github.com/dfontana/gph/releases/download/v0.1.0/gph-aarch64-apple-darwin.tar.gz"
+      sha256 "0ab24d6b6eeea5b53dd7f60ef9139aee2a997839ee7d16089a28e959c22e6ddc"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/dfontana/gph/releases/download/v0.0.0/gph-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "0000000000000000000000000000000000000000000000000000000000000000"
+      url "https://github.com/dfontana/gph/releases/download/v0.1.0/gph-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "b360ee0c3765207cc23559b3d0c3d3adc023a2b24d42da78fe2ca60122c3c91b"
     end
     on_intel do
-      url "https://github.com/dfontana/gph/releases/download/v0.0.0/gph-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "0000000000000000000000000000000000000000000000000000000000000000"
+      url "https://github.com/dfontana/gph/releases/download/v0.1.0/gph-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "6407c32fa968f47a50cbf85c1d545fdd0941882d66ebd9294726c4def6d4881b"
     end
   end
 
