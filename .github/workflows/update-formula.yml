@@ -3,12 +3,12 @@ name: update-formula
 on:
   # Primary path: release workflows fire this when a release is published.
   repository_dispatch:
-    types: [starjj-release, arrus-release, tpl-release, epc-release, shpi-release]
+    types: [starjj-release, arrus-release, tpl-release, epc-release, shpi-release, gph-release]
   # Manual: run from the Actions tab, targeting a specific formula and optional tag.
   workflow_dispatch:
     inputs:
       formula:
-        description: "Formula to update (starjj, arrus, tpl, epc, shpi; blank = all)"
+        description: "Formula to update (starjj, arrus, tpl, epc, shpi, gph; blank = all)"
         required: false
       tag:
         description: "Release tag to pin (default: latest)"
@@ -44,6 +44,7 @@ jobs:
             scripts/gen-tpl-formula.sh ""
             scripts/gen-epc-formula.sh ""
             scripts/gen-shpi-formula.sh ""
+            scripts/gen-gph-formula.sh ""
           fi
 
       - name: Commit if changed
