@@ -2,23 +2,23 @@
 class Gph < Formula
   desc "Kitty-native Mermaid previewer and SVG exporter"
   homepage "https://github.com/dfontana/gph"
-  version "0.3.0"
+  version "0.3.1"
 
   on_macos do
     on_arm do
-      url "https://github.com/dfontana/gph/releases/download/v0.3.0/gph-aarch64-apple-darwin.tar.gz"
-      sha256 "d0fb560b3bce4b6616cb9a9657ddf03b562ee0ada235b4e313ffbb2f0c21ac90"
+      url "https://github.com/dfontana/gph/releases/download/v0.3.1/gph-aarch64-apple-darwin.tar.gz"
+      sha256 "ec46bfe320d66ba79301965906a54b49e8e25cbeecca516ecea1446aab012421"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/dfontana/gph/releases/download/v0.3.0/gph-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "f9ee523818d21162d446db3eb05f90391bf553e2faac787a7fc6e31bbf7dae7e"
+      url "https://github.com/dfontana/gph/releases/download/v0.3.1/gph-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "c52a08ddaace5e38c633f9490a0860348fd6bde9121c55a182f88de4fd3421ce"
     end
     on_intel do
-      url "https://github.com/dfontana/gph/releases/download/v0.3.0/gph-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "88c4e801053965e4b303e672bcd0f8572bc80b0c9d8864549ddbeb73502e3f6f"
+      url "https://github.com/dfontana/gph/releases/download/v0.3.1/gph-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "61c2db23b28a9cf70afd172826c26e3a8a605f3980e51e6c0a4b529204d5f806"
     end
   end
 
