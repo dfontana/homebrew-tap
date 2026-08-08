@@ -2,23 +2,23 @@
 class Epc < Formula
   desc "Epc"
   homepage "https://github.com/dfontana/epc"
-  version "0.1.1"
+  version "0.1.2"
 
   on_macos do
     on_arm do
-      url "https://github.com/dfontana/epc/releases/download/v0.1.1/epc-aarch64-apple-darwin.tar.gz"
-      sha256 "8c11fb380a55c2a8b1af9f766921ce51800bdb1b6287bc2f9162971667ddcd3c"
+      url "https://github.com/dfontana/epc/releases/download/v0.1.2/epc-aarch64-apple-darwin.tar.gz"
+      sha256 "915c4fce969fed363e36164b6cc64329177d7532d2e8671fcaa4036dba92e12e"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/dfontana/epc/releases/download/v0.1.1/epc-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "d93588c157e10302a2b6f23193876572586701e4b0ef81fb8f149267cd6617fa"
+      url "https://github.com/dfontana/epc/releases/download/v0.1.2/epc-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "0d1a12a269064beda74acbe16194a7cd215cbf2e231ba72c445b3a5605947724"
     end
     on_intel do
-      url "https://github.com/dfontana/epc/releases/download/v0.1.1/epc-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "df11bad51e0bfe03638581849c1d5768978467a0896244d2045dc6792a2c0ff3"
+      url "https://github.com/dfontana/epc/releases/download/v0.1.2/epc-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "02aa413701833518be5954563ef5389c14669f94ccbdde0aacada91900094403"
     end
   end
 
