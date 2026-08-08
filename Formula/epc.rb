@@ -7,18 +7,18 @@ class Epc < Formula
   on_macos do
     on_arm do
       url "https://github.com/dfontana/epc/releases/download/v0.1.2/epc-aarch64-apple-darwin.tar.gz"
-      sha256 "915c4fce969fed363e36164b6cc64329177d7532d2e8671fcaa4036dba92e12e"
+      sha256 "bee50218f284294879da1f84044060cae63eaca49fe55ca068df8086e711bd47"
     end
   end
 
   on_linux do
     on_arm do
       url "https://github.com/dfontana/epc/releases/download/v0.1.2/epc-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "0d1a12a269064beda74acbe16194a7cd215cbf2e231ba72c445b3a5605947724"
+      sha256 "62a5d5e021a689cceb8f8061586402283831f868f8986a94f4c30bbee24100fa"
     end
     on_intel do
       url "https://github.com/dfontana/epc/releases/download/v0.1.2/epc-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "02aa413701833518be5954563ef5389c14669f94ccbdde0aacada91900094403"
+      sha256 "1a31d85b4e08544faa93ed705e5c5e545f9674cdfe931eeb06d6c0004af44a3b"
     end
   end
 
